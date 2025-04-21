@@ -8,6 +8,7 @@ An example of using the Yahoo Finance library
 |:------------|---------:|
 | Python      |   3.13.3 |
 | YFinance    |   0.2.55 |
+| Pandas      |    2.2.3 |
 | Numpy       |    2.2.5 |
 | PrettyTable |   3.16.0 |
 | VSCode      |   1.99.0 |
@@ -23,5 +24,4 @@ An example of using the Yahoo Finance library
 
 * [YFinance documentation](https://yfinance-python.org/)
 * [Numpy 2.2](https://numpy.org/doc/2.2/)
-* [Rich](https://rich.readthedocs.io/en/stable/tables.html)
-* 
+* [PrettyTable](https://github.com/prettytable/prettytable)
