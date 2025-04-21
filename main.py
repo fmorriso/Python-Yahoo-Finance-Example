@@ -23,6 +23,16 @@ def get_python_version() -> str:
     return f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
 
 
+def print_info(info: dict):
+    #print(tabulate(info.items(), headers=["Attribute", "Value"], tablefmt="grid"))
+    # Filter out items where the value is a dictionary
+    #filtered_info = {key: value for key, value in info.items() if not isinstance(value, dict)}
+    filtered_info = {key: value for key, value in info.items() if not isinstance(value, dict) and not isinstance(
+        value, list)}
+    print(f'{type(filtered_info) = }')
+    print(tabulate(filtered_info.items(), headers = ["Attribute", "Value"], tablefmt = "grid"))
+
+
 def print_tableized(df):
     if not isinstance(df, pd.DataFrame):
         return
@@ -108,31 +118,23 @@ def print_pretty_table(df, include_index=True):
 
 def get_financial_information(stock_symbol: str) -> Ticker:
     tkr: Ticker = yf.Ticker(stock_symbol)
-    print(f'{type(tkr) = }')
 
-    print(f'{type(tkr.info) = }')
-    print(tkr.info)
-
-    print(f'{type(tkr.calendar) = }')
-    print(tkr.calendar)
-
-    # use Pandas to create a DataFrame out of some of the stock ticker dictionary
-    #df = pd.DataFrame(tkr.calendar)
-    #display(df)
-
-    #print_tabulate(df)
-
-    #UGLY print(print_tableized(df))
-    #FAILS:  print_rich(df)
-    #FAILS print_spark(df)
-    # print_pretty_table(df)
     return tkr
 
 
 
 def main():
     tkr: Ticker = get_financial_information('TSLA')
-    print_pretty_table(pd.DataFrame(tkr.calendar))
+
+    print_info(tkr.info) # NOTE: cannot use pd.DataFrame because some underlying arrays are not of equal length
+
+    #print_pretty_table(pd.DataFrame(filtered_info))
+    #print_pretty_table(pd.DataFrame(tkr.calendar))
+    #print_pretty_table(pd.DataFrame(tkr.financials))
+    #print_pretty_table(pd.DataFrame(tkr.balancesheet))
+    #print_pretty_table(pd.DataFrame(tkr.recommendations))
+    #print_pretty_table(pd.DataFrame(tkr.cashflow))
+
 
 
 if __name__ == '__main__':
