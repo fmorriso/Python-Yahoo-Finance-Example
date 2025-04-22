@@ -24,13 +24,12 @@ def get_python_version() -> str:
 
 
 def print_info(info: dict):
-    #print(tabulate(info.items(), headers=["Attribute", "Value"], tablefmt="grid"))
+    print(tabulate(info.items(), headers=["Attribute", "Value"], tablefmt="grid"))
     # Filter out items where the value is a dictionary
-    #filtered_info = {key: value for key, value in info.items() if not isinstance(value, dict)}
-    filtered_info = {key: value for key, value in info.items() if not isinstance(value, dict) and not isinstance(
-        value, list)}
-    print(f'{type(filtered_info) = }')
-    print(tabulate(filtered_info.items(), headers = ["Attribute", "Value"], tablefmt = "grid"))
+    #filtered_info = {key: value for key, value in info.items() if not isinstance(value, dict) and not isinstance(
+    #    value, list)}
+    # print(f'{type(filtered_info) = }')
+    #print(tabulate(filtered_info.items(), headers = ["Attribute", "Value"], tablefmt = "grid"))
 
 
 def print_tableized(df):
