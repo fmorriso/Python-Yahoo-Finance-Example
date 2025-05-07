@@ -6,4 +6,5 @@ yfinance~=0.2.55
 #ipython~=9.1.0
 #pyspark~=3.5.5
 #rich~=14.0.0
-prettytable=~3.16.0
+prettytable~=3.16.0
+protobuf!=5.29

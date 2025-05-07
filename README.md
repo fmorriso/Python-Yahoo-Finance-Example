@@ -11,6 +11,7 @@ An example of using the Yahoo Finance library
 | Pandas      |    2.2.3 |
 | Numpy       |    2.2.5 |
 | PrettyTable |   3.16.0 |
+| protobuf    |   5.29.4 |
 | VSCode      |   1.99.0 |
 | PyCharm     | 2025.1.0 |
 
