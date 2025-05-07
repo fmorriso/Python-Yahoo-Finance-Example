@@ -1,7 +1,5 @@
-# start
 numpy~=2.2.5
 pandas~=2.2.3
 prettytable~=3.16.0
 protobuf!=5.29
 yfinance~=0.2.55
-# end
